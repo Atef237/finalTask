@@ -3,5 +3,10 @@
     return  [
         'addPost' => 'Add Post',
         'comment' => 'Comment',
-        'like' => 'Like'
+        'like' => 'Like',
+
+
+        //groups
+
+        'Join' => 'Join'
     ];

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
-
+@if(app()->getLocale() == 'ar') {{$directory = 'css-rtl'}} @else {{$directory = 'css'}}  @endif
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,10 +19,10 @@
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
           rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/plugins/animate/animate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.$directory.'/plugins/animate/animate.css')}}">
     <!-- BEGIN VENDOR CSS-->
 
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/vendors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.$directory.'/vendors.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/weather-icons/climacons.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/fonts/meteocons/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/charts/morris.css')}}">
@@ -33,26 +33,26 @@
     <link rel="stylesheet" type="text/css"
           href="{{asset('assets/admin/vendors/css/forms/toggle/bootstrap-switch.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/forms/toggle/switchery.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/pages/chat-application.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.$directory.'/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.$directory.'/pages/chat-application.css')}}">
     <!-- END VENDOR CSS-->
     <!-- BEGIN MODERN CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/app.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/custom-rtl.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.$directory.'/app.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.$directory.'/custom-rtl.css')}}">
     <!-- END MODERN CSS-->
     <!-- BEGIN Page Level CSS-->
     <link rel="stylesheet" type="text/css"
-          href="{{asset('assets/admin/css-rtl/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/core/colors/palette-gradient.css')}}">
+          href="{{asset('assets/admin/'.$directory.'/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.$directory.'/core/colors/palette-gradient.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/fonts/simple-line-icons/style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/core/colors/palette-gradient.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/pages/timeline.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.$directory.'/core/colors/palette-gradient.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.$directory.'/pages/timeline.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/cryptocoins/cryptocoins.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/extensions/datedropper.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/extensions/timedropper.min.css')}}">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/style-rtl.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/'.$directory.'/style-rtl.css')}}">
     <!-- END Custom CSS-->
     <!-- @notify_css -->
     @yield('style')
@@ -66,13 +66,13 @@
 <body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar"
       data-open="click" data-menu="vertical-menu" data-col="2-columns">
 <!-- fixed-top-->
-@include('admin.includes.header')
+@include('user.includes.header')
 <!-- ////////////////////////////////////////////////////////////////////////////-->
-@include('admin.includes.sidebar')
+@include('user.includes.sidebar')
 
 @yield('content')
 <!-- ////////////////////////////////////////////////////////////////////////////-->
-@include('admin.includes.footer')
+@include('user.includes.footer')
 
 <!--@notify_js -->
 <!-- @notify_render -->

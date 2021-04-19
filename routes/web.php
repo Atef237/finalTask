@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Admin_group;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -10,7 +11,10 @@ use Illuminate\Support\Facades\Route;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-|
+|    public function login(){
+        return view('user.auth.login');
+    }
+
 */
 
     Route::get('test', function () {
@@ -32,24 +36,26 @@ Route::group(
 
 
 
-        route::group(['namespace' => 'User'],function (){
+        route::group(['namespace' => 'User','middleware' => 'auth:admin'],function (){
+
             route::get('/','userController@index')->name('index');
 
             route::group(['prefix' => 'friend'],function (){
 
-                route::get('show','userController@AllFriends')->name('AllFriends'); //
-                route::get('add','userController@addFriend')->name('AddFriends'); //
-                route::get('sendRequest/{id}','userController@sendRequest')->name('sendRequest'); //
+                route::get('show','friendController@AllFriends')->name('AllFriends'); //
+                route::get('add','friendController@addFriend')->name('AddFriends'); //
+                route::get('sendRequest/{id}','friendController@sendRequest')->name('sendRequest'); //
 
             });
 
             route::group(['prefix' => 'posts'],function (){
 
-                route::get('Post','userController@Post')->name('Post'); //
-                route::Post('addPost','userController@addPost')->name('addPost'); //
-                route::get('addComment/{id}','userController@addComment')->name('addComment'); //
-                route::Post('addComment','userController@postComment')->name('postComment'); //
-                route::get('addLike/{id}','userController@addLike')->name('addLike'); //
+                route::get('Post','postController@Post')->name('Post'); //
+                route::Post('addPost','postController@addPost')->name('addPost'); //
+
+                route::get('addComment/{id}','commentController@addComment')->name('addComment'); //
+                route::Post('addComment','commentController@postComment')->name('postComment'); //
+                route::get('addLike/{id}','likeController@addLike')->name('addLike'); //
             });
 
 
@@ -72,21 +78,32 @@ Route::group(
             });
       ######################################################################################################################
 
+            route::group([ 'prefix' => 'groups'],function (){
+                route::get('create','GroupController@create')->name('createGroup');
+                route::Post('create','GroupController@postGroup')->name('postGroup');
+                route::get('show','GroupController@show')->name('showGroup');
+                route::get('Join/{id}','GroupController@join')->name('join');
+
+            });
 
         });
 
 
-        route::group(['namespace' => 'User'],function (){
+        route::group(['namespace' => 'User','middleware'=>'guest:web'],function (){
 
-            route::get('login','userController@login')->name('login');
+            route::get('register','AuthController@register')->name('register');
 
-            route::Post('login','userController@postLogin')->name('admin.post.login');
+            route::Post('PostRegister','AuthController@store')->name('PostRegister');
 
-            route::get('forgot','userController@forgotPass')->name('forgot');
+            route::get('login','AuthController@login')->name('login');
 
-            route::Post('resetPass','userController@resetPass')->name('resetPass');
+            route::Post('login','AuthController@postLogin')->name('admin.post.login');
 
-            route::Post('updatePassword','userController@updatePassword')->name('updatePassword');
+            route::get('forgot','AuthController@forgotPass')->name('forgot');
+
+            route::Post('resetPass','AuthController@resetPass')->name('resetPass');
+
+            route::Post('updatePassword','AuthController@updatePassword')->name('updatePassword');
 
         });
     });

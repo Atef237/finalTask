@@ -1,4 +1,4 @@
-    <nav
+<nav
     class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light bg-info navbar-shadow">
     <div class="navbar-wrapper">
         <div class="navbar-header">
@@ -9,7 +9,7 @@
                 <li class="nav-item">
                     <a class="navbar-brand" href="index.html">
                         <img class="brand-logo" alt="modern admin logo"
-                                src="{{asset('assets/admin/images/logo/logo.png')}}">
+                             src="{{asset('assets/admin/images/logo/logo.png')}}">
                         <h3 class="brand-text">Modern Admin</h3>
                     </a>
                 </li>
@@ -23,26 +23,12 @@
             <div class="collapse navbar-collapse" id="navbar-mobile">
                 <ul class="nav navbar-nav mr-auto float-left">
                     <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs"
-                                                                href="#"><i class="ft-menu"></i></a></li>
+                                                              href="#"><i class="ft-menu"></i></a></li>
                     <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i
                                 class="ficon ft-maximize"></i></a></li>
                 </ul>
                 <ul class="nav navbar-nav float-right">
-                    <li class="dropdown dropdown-user nav-item">
-                        <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                        <span class="mr-1">مرجبا
-                            <span
-                                class="user-name text-bold-700">  </span>
-                        </span>
 
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i
-                                    class="ft-user"></i> تعديل الملف الشحصي </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="ft-power"></i> تسجيل
-                                الخروج </a>
-                        </div>
-                    </li>
 
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
@@ -53,9 +39,18 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
 
+                            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+
+                                <a class="dropdown-item rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                {{ $properties['native'] }}
+                                </a>
+                                <div class="dropdown-divider"></div>
+
+                            @endforeach
 
                         </div>
                     </li>
+
 
                     <li class="dropdown dropdown-notification nav-item">
                         <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i>
@@ -80,7 +75,7 @@
                                                 amet, consectetuer elit.</p>
                                             <small>
                                                 <time class="media-meta text-muted"
-                                                        datetime="2015-06-11T18:29:20+08:00">30 minutes ago
+                                                      datetime="2015-06-11T18:29:20+08:00">30 minutes ago
                                                 </time>
                                             </small>
                                         </div>
@@ -96,7 +91,7 @@
                                                 mauris eu risus.</p>
                                             <small>
                                                 <time class="media-meta text-muted"
-                                                        datetime="2015-06-11T18:29:20+08:00">Five hour ago
+                                                      datetime="2015-06-11T18:29:20+08:00">Five hour ago
                                                 </time>
                                             </small>
                                         </div>
@@ -113,7 +108,7 @@
                                                 dapibus neque.</p>
                                             <small>
                                                 <time class="media-meta text-muted"
-                                                        datetime="2015-06-11T18:29:20+08:00">Today
+                                                      datetime="2015-06-11T18:29:20+08:00">Today
                                                 </time>
                                             </small>
                                         </div>
@@ -127,7 +122,7 @@
                                             <h6 class="media-heading">Complete the task</h6>
                                             <small>
                                                 <time class="media-meta text-muted"
-                                                        datetime="2015-06-11T18:29:20+08:00">Last week
+                                                      datetime="2015-06-11T18:29:20+08:00">Last week
                                                 </time>
                                             </small>
                                         </div>
@@ -141,7 +136,7 @@
                                             <h6 class="media-heading">Generate monthly report</h6>
                                             <small>
                                                 <time class="media-meta text-muted"
-                                                        datetime="2015-06-11T18:29:20+08:00">Last month
+                                                      datetime="2015-06-11T18:29:20+08:00">Last month
                                                 </time>
                                             </small>
                                         </div>
@@ -171,7 +166,7 @@
                                         <div class="media-left">
                         <span class="avatar avatar-sm avatar-online rounded-circle">
                             <img src="{{asset('assets/admin/images/portrait/small/avatar-s-19.png')}}"
-                                alt="avatar"><i></i></span>
+                                 alt="avatar"><i></i></span>
                                         </div>
                                         <div class="media-body">
                                             <h6 class="media-heading">Margaret Govan</h6>
@@ -179,7 +174,7 @@
                                                 let's start.</p>
                                             <small>
                                                 <time class="media-meta text-muted"
-                                                        datetime="2015-06-11T18:29:20+08:00">Today
+                                                      datetime="2015-06-11T18:29:20+08:00">Today
                                                 </time>
                                             </small>
                                         </div>
@@ -197,7 +192,7 @@
                                                 there is</p>
                                             <small>
                                                 <time class="media-meta text-muted"
-                                                        datetime="2015-06-11T18:29:20+08:00">Tuesday
+                                                      datetime="2015-06-11T18:29:20+08:00">Tuesday
                                                 </time>
                                             </small>
                                         </div>
@@ -215,7 +210,7 @@
                                                 this week ?</p>
                                             <small>
                                                 <time class="media-meta text-muted"
-                                                        datetime="2015-06-11T18:29:20+08:00">Friday
+                                                      datetime="2015-06-11T18:29:20+08:00">Friday
                                                 </time>
                                             </small>
                                         </div>
@@ -233,7 +228,7 @@
                                                 this saturday.</p>
                                             <small>
                                                 <time class="media-meta text-muted"
-                                                        datetime="2015-06-11T18:29:20+08:00">last month
+                                                      datetime="2015-06-11T18:29:20+08:00">last month
                                                 </time>
                                             </small>
                                         </div>
@@ -248,4 +243,4 @@
             </div>
         </div>
     </div>
-    </nav>
+</nav>

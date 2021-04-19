@@ -11,5 +11,10 @@ return [
     'show_all' => 'Show All',
     'Add_user' => 'Add User',
 
+    'groups'         => 'Groups',
+    'Add_group'      => 'Create Group',
+    'show_all_group' =>'Show All Groups',
+
+
 
 ];

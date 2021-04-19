@@ -85,4 +85,10 @@ class adminController extends Controller
 
     }
     */
+
+    public function showAllPost($id){
+        $posts = Post::where('user_id',$id)->get();
+
+        return view('admin.index',compact('posts'));
+    }
 }

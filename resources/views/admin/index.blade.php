@@ -1,27 +1,33 @@
-@extends('layouts.user')
+@extends('layouts.admin')
 
 @section('content')
+
     <div class="app-content content">
         <div class="content-wrapper">
-            <div class="content-header">
 
-                    <div class="row">
-                        @foreach($posts as $post)
-                            <div class="col-sm-12">
-                                <div class="card">
-                                    <div class="card-body">
+            @isset($posts)
+                @foreach($posts as $postt)
 
-                                        <h5 class="card-title">{{$post -> user->name }}</h5>
-                                        <p class="card-text">{{$post -> text}}</p>
 
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$postt -> user->name}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{$postt -> user->email}}</h6>
+                            <p class="card-text">{{$postt -> text}}</p>
+                            <h6 class="card-subtitle mb-2 text-muted"> comments: {{ $comments->count() }} -- likes: {{ $likes->count()}} </h6>
+                            <a href="{{route('addComment',$postt->id)}}" class="card-link">{{__('admin/index.comment')}}</a>
+                            <a href="{{route('addLike',$postt->id)}}" class="card-link">{{__('admin/index.like')}}</a>
+
+                        </div>
                     </div>
 
-            </div>
+                @endforeach
+            @endisset
+
+
+
+
         </div>
     </div>
-
 @endsection

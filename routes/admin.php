@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+*/
 
 
 Route::group(
@@ -28,12 +28,15 @@ Route::group(
 
 
 
+        /*
 
     route::group(['namespace' => 'Admin','prefix' => 'admin'],function (){
        route::get('//','adminController@index')->name('admin.dashboard');
 
        route::get('show','adminController@allUsers')->name('AllUsers'); // get all users
-       route::get('edit/{id}','adminController@editUser')->name('editUser'); // edit user
+
+       route::get('showAllPost/{id}','adminController@showAllPost')->name('showAllPost'); // edit user
+
        route::post('update/{id}','adminController@updateUser')->name('updateUser'); // edit user
        route::get('delete','adminController@deleteUser')->name('deleteUser'); // delete user
 
@@ -57,6 +60,12 @@ Route::group(
         route::Post('login','adminController@postLogin')->name('admin.post.login');
 
     });
+
+        */
+
+
+
+
 });
 
-*/
+

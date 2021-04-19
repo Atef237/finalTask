@@ -3,5 +3,10 @@
     return  [
         'addPost' => 'اضافة منشور',
         'comment' => 'تعليق',
-        'like' => 'اعجاب'
+        'like' => 'اعجاب',
+
+        //groups
+
+        'Join' => 'انضم'
+
     ];

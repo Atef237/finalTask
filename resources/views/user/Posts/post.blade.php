@@ -15,7 +15,6 @@
                 <br>
                 <br>
 
-                <input type="hidden" value=1 name="user_id">
 
                 <fieldset class="form-group position-relative has-icon-left mb-0">
                     <textarea  name="text" class="form-control form-control-lg input-lg" placeholder="Inter Content"></textarea>
