@@ -31,7 +31,7 @@ class replyController extends Controller
 
     public function delete( replyRequest $request){
 
-        $reply = replies::find($request -> comment_id);
+        $reply = replies::find($request -> reply_id);
 
         if($reply){
 
@@ -45,7 +45,7 @@ class replyController extends Controller
 
     public function update( replyRequest $request){
 
-        $reply = replies::find($request -> comment_id );
+        $reply = replies::find($request -> reply_id );
 
         if($reply){
 

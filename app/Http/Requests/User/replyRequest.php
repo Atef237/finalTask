@@ -25,6 +25,7 @@ class replyRequest extends FormRequest
     {
         return [
             'reply_id' => 'required',
+            'text' => 'required',
 
         ];
     }

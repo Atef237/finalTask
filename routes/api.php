@@ -15,35 +15,30 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+        route::Post('login','AuthController@Login');
+        route::Post('register','AuthController@register');
+
+        route::post('forgot','forgotController@forgot');
+        route::post('reset','forgotController@reset')->name('reset');
+
+
+
     route::group(['namespace' => 'User\Api'],function (){
 
         route::group(['prefix' => 'post'],function (){
 
-            route::get ('posts','PostController@posts');      // It works properly
-            route::Post('addPost','PostController@add');     // It works properly
-            route::Post('update','PostController@update');  // It works properly
-            route::get ('delete','PostController@delete'); // It works properly
+            route::get ('posts','PostController@posts');
+            route::Post('addPost','PostController@add');
+            route::Post('update','PostController@update');
+            route::get ('delete','PostController@delete');
 
         });
-
-
-        route::group(['prefix' => 'friend'],function (){
-
-            route::get ('all','friendController@all');            // It works properly
-            route::Post('sendRequest','friendController@sendRequest');
-
-        });
-
-        route::group(['prefix' => 'timeLine'],function(){
-            route::get('friend','timeline@friend');
-        });
-
 
         route::group(['prefix' => 'comment'],function(){
 
-            route::post('add','commentController@add'); // It works properly
-            route::get ('delete','commentController@delete');// It works properly
-            route::Post ('update','commentController@update'); // It works properly
+            route::post('add','commentController@add');
+            route::get ('delete','commentController@delete');
+            route::Post ('update','commentController@update');
         });
 
 
@@ -55,13 +50,38 @@ use Illuminate\Support\Facades\Route;
 
         });
 
+        route::group(['prefix' => 'group'],function(){
+
+            route::post('create','GroupController@create');
+            route::get ('show','GroupController@show');
+            route::Post('join','GroupController@join');
+            route::get ('out/{id}','GroupController@out');
+
+        });
 
 
-        route::Post('login','AuthController@Login');// It works properly
-        route::Post('register','AuthController@register');// It works properly
+        ##
 
-        route::post('forgot','forgotController@forgot');// It works properly
-        route::post('reset','forgotController@reset')->name('reset'); // It works properly
+        route::group(['prefix' => 'friend'],function (){
+
+            route::get ('all','friendController@all');            //
+            route::Post('sendRequest','friendController@sendRequest');
+            route::get ('friendRequest','friendController@friendRequest');
+
+        });
+
+        route::group(['prefix' => 'timeLine'],function(){
+            route::get('friend','timeline@friend');
+        });
+
+
+
+
+
+
+
+
+
 
 
     });

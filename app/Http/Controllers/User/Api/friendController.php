@@ -30,21 +30,27 @@ class friendController extends Controller
 
     public function sendRequest(Request $request){
 
-        $friend = Friend::create();
-        $friend -> sender_id = $request->sender_id;
-        $friend -> Future_id = $request->Future_id;
-        $friend -> save();
+            $friend = Friend::create();
+            $friend -> sender_id = $request->id;
+            $friend -> Future_id = $request->Future_id;
+            $friend -> save();
+
         if($friend){
             return $this -> returnData('done','friend', $friend );
         }else {
-            return $this->returnError('1', 'no post found for you');
+            return $this->returnError('1', 'Something went wrong');
         }
     }
 
     public function friendRequest(Request $request){
 
-        return $friends = Friend::where('Future_id',$request->sender_id && 'accepted',0)->get();
-        //return view('user.friends.friendRequest',compact('friends'));
+         $friends = Friend::where([['Future_id',$request->Future_id],['accepted',1]])->get();
+
+        if($friends->count() > 0){
+            return $this -> returnData('done','friend', $friends );
+        }else {
+            return $this->returnError('1', 'no friend found for you');
+        }
     }
 
     public function accept_request($id){

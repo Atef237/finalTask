@@ -69,4 +69,6 @@ class AuthController extends Controller
     public function updatePassword(){
         return "apdate password";
     }
+
+
 }
