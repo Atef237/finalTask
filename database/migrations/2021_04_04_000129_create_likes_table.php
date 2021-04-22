@@ -17,10 +17,14 @@ class CreateLikesTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('post_id')->unsigned();
+            //$table->bigInteger('comment_id')->unsigned();
+
             $table->timestamps();
             ##############################################
             $table->foreign('user_id')->references('id')->on('Users')->onDelete('cascade');
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            //$table->foreign('comment_id')->references('id')->on('comments')->onDelete('cascade');
+
         });
     }
 

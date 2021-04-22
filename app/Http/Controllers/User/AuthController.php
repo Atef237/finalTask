@@ -17,15 +17,15 @@ class AuthController extends Controller
 
     }
 
-    public function store( Regiestration $request ){
+    public function store(  ){
 
         //return $request;
-        $user = User::create($request -> except('_token'));
+        $user = User::create();
 
-        $user -> first_name = $request -> first_name;
-        $user -> last_name = $request -> last_name;
-        $user -> email = $request -> email;
-        $user -> password = Hash::make($request -> password);
+        $user -> first_name = "yousef";
+        $user -> last_name = "ali";
+        $user -> email = "ali@gmail.com";
+        $user -> password = Hash::make(123456789);
 
         $user -> save();
         return redirect()->route('login');
@@ -40,11 +40,11 @@ class AuthController extends Controller
 
         //return $request;
 
-        if (auth()->guard('admin')->attempt(['email'=> $request->input('email'), 'password'=> $request->input('password')])){
 
 
-            $admin = auth('admin')->user();
-            return redirect()->route('index',compact('admin'));
+        if (auth()->guard('web')->attempt(['email'=> $request->input('email'), 'password'=> $request->input('password')])){
+
+            return redirect()->route('index');
         }
         return redirect()->back()->with(['error' => 'هناك خطأ بالبيانات']);
 

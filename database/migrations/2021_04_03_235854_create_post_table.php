@@ -18,12 +18,16 @@ class CreatePostTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('like_id')->unsigned();
             $table->bigInteger('comment_id')->unsigned();
+            //$table->bigInteger('group_id')->unsigned();
+
             $table->text('text');
             $table->timestamps();
             ##############################################
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('comment_id')->references('id')->on('comments')->onDelete('cascade');
             $table->foreign('like_id')->references('id')->on('likes')->onDelete('cascade');
+            //$table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
+
 
         });
     }

@@ -28,7 +28,7 @@ Route::group(
 
 
 
-        /*
+
 
     route::group(['namespace' => 'Admin','prefix' => 'admin'],function (){
        route::get('//','adminController@index')->name('admin.dashboard');
@@ -61,7 +61,7 @@ Route::group(
 
     });
 
-        */
+
 
 
 

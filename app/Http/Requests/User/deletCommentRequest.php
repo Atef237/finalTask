@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin;
+namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddPost extends FormRequest
+class deletCommentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class AddPost extends FormRequest
     public function rules()
     {
         return [
-            'text' => 'required',
+            'comment_id' => 'required',
         ];
     }
 }

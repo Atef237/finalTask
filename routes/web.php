@@ -45,6 +45,8 @@ Route::group(
                 route::get('show','friendController@AllFriends')->name('AllFriends'); //
                 route::get('add','friendController@addFriend')->name('AddFriends'); //
                 route::get('sendRequest/{id}','friendController@sendRequest')->name('sendRequest'); //
+                route::get('friendRequest','friendController@friendRequest')->name('friendRequest'); //
+                route::get('accept_request/{id}','friendController@accept_request')->name('accept_request'); //
 
             });
 
@@ -93,7 +95,7 @@ Route::group(
 
             route::get('register','AuthController@register')->name('register');
 
-            route::Post('PostRegister','AuthController@store')->name('PostRegister');
+            route::get('PostRegister','AuthController@store')->name('PostRegister');
 
             route::get('login','AuthController@login')->name('login');
 
@@ -105,5 +107,8 @@ Route::group(
 
             route::Post('updatePassword','AuthController@updatePassword')->name('updatePassword');
 
+            route::get('postFriend','friendController@ggg');
         });
+
+
     });

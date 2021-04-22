@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMembersTables extends Migration
+class CreateRepliesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,17 @@ class CreateMembersTables extends Migration
      */
     public function up()
     {
-        Schema::create('group_user_members', function (Blueprint $table) {
+        Schema::create('replies', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('group_id')->unsigned();
-            $table->bigInteger('member_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('comment_id')->unsigned();
+            $table->text('text');
             $table->timestamps();
 
-            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
+
+            ##############################################
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('comment_id')->references('id')->on('comments')->onDelete('cascade');
         });
     }
 
@@ -31,6 +34,6 @@ class CreateMembersTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('group_user_members');
+        Schema::dropIfExists('replies');
     }
 }

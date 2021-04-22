@@ -1,8 +1,8 @@
-<h1>Hello {{$user->name}} </h1>
+<h1> Hello </h1>
 
 <p>
 
-    clik <a href="{{route('updatePassword')}}">hear</a> to reset password
+    clik <a href="{{route('reset',compact('token'))}}">hear</a> to reset password
 
 </p>
 

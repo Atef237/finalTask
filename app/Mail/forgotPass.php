@@ -17,10 +17,9 @@ class forgotPass extends Mailable
      * @return void
      */
 
-    public $user;
-    public function __construct($user)
+    public $token;
+    public function __construct($token)
     {
-        $this -> user = $user;
 
     }
 
