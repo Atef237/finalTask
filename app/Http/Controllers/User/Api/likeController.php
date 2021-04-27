@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\User\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Like;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class likeController extends Controller
@@ -17,6 +18,15 @@ class likeController extends Controller
 
         return redirect()->route('index');
 
+    }
+
+    public function addLikeMorph(Request $request,$id){
+
+         $post = Post::findOrFail($id)->get();
+         $post -> likes()->create([
+             'user_id' => $request -> user_id,
+         ]);
+        $post -> save();
     }
 
 }

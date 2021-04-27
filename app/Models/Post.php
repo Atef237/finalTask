@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
 
+    protected $touches = ['likes'];
+
+
     protected $fillable = [
         'user_id', 'text','group_id','title','accepted'
     ];
@@ -20,6 +23,11 @@ class Post extends Model
     }
 
     public function like(){
+
         return $this->hasMany('App\Models\Like');
+    }
+
+    public function likes(){
+        return $this -> morphMany(like_morph::class,like);
     }
 }

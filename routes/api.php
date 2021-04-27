@@ -74,6 +74,10 @@ use Illuminate\Support\Facades\Route;
             route::get('friend','timeline@friend');
         });
 
+        route::group(['prefix' => 'like_morph'],function(){
+            route::post('addLikeMorph/{id}','likeController@addLikeMorph');
+        });
+
 
 
 

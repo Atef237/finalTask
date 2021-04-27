@@ -17,4 +17,8 @@ class replies extends Model
     public function comments(){
         return $this->belongsTo('App\Models\Comment');
     }
+
+    public function likes(){
+        return $this -> morphMany(like::class,'like');
+    }
 }

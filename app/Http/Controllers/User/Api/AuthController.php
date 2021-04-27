@@ -63,6 +63,7 @@ class AuthController extends Controller
 
             Mail::To($user->email) ->send(new forgotPass($user));
             return redirect()->route('login')->with(['success' => 'Reset Code Sent To Your Email']);
+
         }
     }
 

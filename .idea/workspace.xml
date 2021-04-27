@@ -2,14 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e5cccb9-c936-4745-a80b-e4da9f10b88f" name="Default Changelist" comment="....">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/User/joinGroup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/like_morph.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/New folder/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/New folder/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/New folder/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/New folder/2021_04_03_235854_create_post_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/New folder/2021_04_04_000051_create_comments_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/New folder/2021_04_04_000129_create_likes_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/New folder/2021_04_04_000152_create_replys_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/New folder/2021_04_13_050404_create_table_admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/New folder/2021_04_19_032722_create_group_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/New folder/2021_04_19_044338_create_admins_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/New folder/2021_04_20_060726_create_friends_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/New folder/2021_04_21_225823_create_like-comment_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/New folder/2021_04_21_225840_create_like-reply_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/New folder/2021_04_21_233003_create_replies_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_04_26_225807_create_likes_morph.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/Api/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/Api/GroupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/Api/GroupController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/Api/friendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/Api/friendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/Api/replyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/Api/replyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/User/GroupRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/User/GroupRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/User/replyRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/User/replyRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/Api/likeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/Api/likeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Reply.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Reply.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/replies.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/replies.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_03_235854_create_post_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_04_000051_create_comments_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_04_000129_create_likes_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_04_000152_create_replys_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_13_050404_create_table_admin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_19_032722_create_group_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_19_044338_create_admins_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_20_060726_create_friends_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_21_225823_create_like-comment_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_21_225840_create_like-reply_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_21_233003_create_replies_table.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +192,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/User/Api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -210,7 +240,8 @@
       <workItem from="1618737267567" duration="45319000" />
       <workItem from="1618866973676" duration="29123000" />
       <workItem from="1618935959071" duration="35780000" />
-      <workItem from="1619037098003" duration="18443000" />
+      <workItem from="1619037098003" duration="19754000" />
+      <workItem from="1619471552680" duration="11547000" />
     </task>
     <servers />
   </component>

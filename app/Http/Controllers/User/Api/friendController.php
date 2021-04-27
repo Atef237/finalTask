@@ -60,4 +60,5 @@ class friendController extends Controller
        return redirect()->route('friendRequest');
 
     }
+
 }
